@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+<body>
+    <div class="banner">
+        <video class="loopvideo" src="./assets/vid/Pexels Videos 1860179.mp4" autoplay muted loop></video>
+        <div class="overlay"></div>
+
+        <div id="heading">
+            <h1> Basic Factor Conversion </h1>
+        </div>
+        <div class="content">
+            
+            <div class="options">
+                <div class="tab-item active">
+                    Binary (2)
+                </div>
+                <div class="tab-item ">
+                    Decimal (10)
+                </div>
+                <div class="tab-item ">
+                    Hexadecimal (16)
+                </div>
+                <div class="line"></div>
+            </div>
+            <!-- BINARY -->
+            <div class="tab-pane active">
+                <div class="binary210">
+                    <h1>Convert binary to decimal (2 -> 10):</h1>
+                    <div class="binary__input">
+                        <input class="input-value__210" type="text" placeholder="100" maxlength="100">
+                    </div>
+                    <div class="output-value">
+                        <div class="output-value_result result-from__210">100</div>
+                        <div class="output-value_result result-equals__210">=</div>
+                        <div class="output-value_result result-to__210">4</div>
+                    </div>
+                </div>
+                <div class="binary216">
+                    <h1>Convert binary to hexadecimal (2 -> 16):</h1>
+                    <div class="binary__input">
+                        <input class="input-value__216" type="text" placeholder="100" maxlength="100">
+                    </div>
+                    <div class="output-value">
+                        <div class="output-value_result result-from__216">100</div>
+                        <div class="output-value_result result-equals__216">=</div>
+                        <div class="output-value_result result-to__216">4</div>
+                    </div>
+                </div>
+            </div>
+            <!-- DECIMAL -->
+            <div class="tab-pane">
+                <div class="decimal102">
+                    <h1>Convert decimal to binary (10 -> 2):</h1>
+                    <div class="decimal__input">
+                        <input class="input-value__102" type="text" placeholder="100" maxlength="100">
+                    </div>
+                    <div class="output-value">
+                        <div class="output-value_result result-from__102">100</div>
+                        <div class="output-value_result result-equals__102">=</div>
+                        <div class="output-value_result result-to__102">1100100</div>
+                    </div>
+                </div>
+                <div class="decimal1016">
+                    <h1>Convert decimal to hexadecimal (10 -> 16):</h1>
+                    <div class="binary__input">
+                        <input class="input-value__1016" type="text" placeholder="100" maxlength="100">
+                    </div>
+                    <div class="output-value">
+                        <div class="output-value_result result-from__1016">100</div>
+                        <div class="output-value_result result-equals__1016">=</div>
+                        <div class="output-value_result result-to__1016">64</div>
+                    </div>
+                </div>
+            </div>
+            <!-- HEXADECIMAL -->
+            <div class="tab-pane">
+                <div class="hexadecimal162">
+                    <h1>Convert hexadecimal to binary (16 -> 2):</h1>
+                    <div class="hexadecimal__input">
+                        <input class="input-value__162" type="text" placeholder="100" maxlength="100">
+                    </div>
+                    <div class="output-value">
+                        <div class="output-value_result result-from__162">100</div>
+                        <div class="output-value_result result-equals__162">=</div>
+                        <div class="output-value_result result-to__162">100000000</div>
+                    </div>
+                </div>
+                <div class="hexadecimal1610">
+                    <h1>Convert hexadecimal to decimal (16 -> 10):</h1>
+                    <div class="hexadecimal__input">
+                        <input class="input-value__1610" type="text" placeholder="100" maxlength="100">
+                    </div>
+                    <div class="output-value">
+                        <div class="output-value_result result-from__1610">100</div>
+                        <div class="output-value_result result-equals__1610">=</div>
+                        <div class="output-value_result result-to__1610">256</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+    <script src="./assets/main.js"></script>
+    <script>
+        const $ = document.querySelector.bind(document);
+        const $$ = document.querySelectorAll.bind(document);
+
+        const tabs = $$(".tab-item");
+        const panes = $$(".tab-pane");
+
+        const tabActive = $(".tab-item.active");
+        const line = $(".content .line");
+
+        line.style.left = tabActive.offsetLeft + "px";
+        line.style.width = tabActive.offsetWidth + "px";
+
+        tabs.forEach((tab, index) => {
+            const pane = panes[index];
+
+            tab.onclick = function () {
+                $(".tab-item.active").classList.remove("active");
+                $(".tab-pane.active").classList.remove("active");
+
+                line.style.left = this.offsetLeft + "px";
+                line.style.width = this.offsetWidth + "px";
+
+                this.classList.add("active");
+                pane.classList.add("active");
+            };
+        });
+    </script>
+</body>
+</html>

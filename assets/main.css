@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+    box-sizing: border-box;
+}
+
+html { /* điều chỉnh toàn bộ trình duyệt*/
+    font-size: 100%;
+    line-height: 1.6rem;
+    box-sizing: border-box; /* biên giới hộp*/
+}
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.loopvideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #03a9f4;
+    mix-blend-mode: overlay;
+}
+
+#heading {
+    background-color: rgba(43, 94, 160, 0.315);
+    width: 100%;
+    min-height: 56px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #fff;
+    text-align: center;
+    line-height: 56px;
+    box-shadow: 5px 5px 10px rgb(24, 94, 185);
+}
+
+.options {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    text-align: center; 
+    margin-top: 50px;
+}
+.line {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: rgb(27, 14, 172);
+    transition: all 0.2s ease;
+}
+
+.tab-item {
+    width: 210px;
+    height: 100px;
+    background-color: rgba(6, 33, 123, 0.5);
+    line-height: 100px;
+    font-size: 25px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border: 5px solid transparent;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    opacity: 0.6;
+    box-shadow: -5px 5px 15px rgb(44, 42, 42);
+}
+.tab-item:hover {
+    opacity: 1;
+    background-color: rgba(26, 57, 161, 0.616);
+    border-color: rgb(70, 70, 207);
+}
+.tab-item.active {
+    opacity: 1;;
+    border-left-color: rgb(27, 14, 172);
+    border-right-color: rgb(27, 14, 172);
+    border-top-color: rgb(27, 14, 172);
+    border: rgb(27, 14, 172) solid 2px;
+}
+.tab-pane.active {
+    display: flex;
+}
+.tab-pane { 
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    border: rgb(27, 14, 172) solid 2px ;
+    background-color: rgba(13, 112, 184, 0.571) ;
+    padding: 50px 0;
+    opacity: 0.9;
+    box-shadow: 0px 10px 20px rgb(19, 23, 31);
+
+}
+.tab-pane {
+    display: none;
+}
+
+.content { 
+    z-index: 2;
+    color: rgb(255, 255, 255);
+    line-height: 50px;
+    margin: auto 0;
+}
+
+.hexadecimal__input,
+.decimal__input,
+.binary__input {
+    width: 100%;
+    background-color: #fff;
+    padding-left: 10px;
+    border-radius: 10px;
+}
+
+.output-value {
+    align-items: center;
+}
+
+/* =============================================================== */
+.input-value__1610,
+.input-value__162,
+.input-value__1016,
+.input-value__102,
+.input-value__216,
+.input-value__210 {
+    border-radius: 10px;
+    border-color: brown;
+    outline: none;
+    width: 100%;
+    height: 50px;
+    border: none;
+    font-size: 18px;
+}
+
+.output-value {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(11, 19, 100);
+    height: 50px;
+    padding: 10px 0;
+    border-radius: 10px;
+}
+.output-value_result {
+    flex: 1;
+    text-align: center;
+    font-size: 25px;
+}
+
+.result-equals__210,
+.result-equals__216,
+.result-equals__102,
+.result-equals__1016,
+.result-equals__162,
+.result-equals__1610 {
+    font-size: 60px;
+    text-align: center;
+    align-items: center;
+}
+
+
+
+
+@media (max-width: 1410px){
+    .tab-pane {
+        flex-direction: column;
+    }
+
+}
+
+@media (max-width: 639px) {
+    .tab-item {
+        font-size: 18px;
+    }
+    
+    .decimal102,
+    .decimal1016,
+    .hexadecimal162,
+    .hexadecimal1610,
+    .binary210,
+    .binary216 {
+        font-size: 12px;
+    }
+    .output-value_result {
+        font-size: 18px;
+    }
+}
